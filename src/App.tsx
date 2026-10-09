@@ -1,4 +1,7 @@
-import type { ReactNode } from 'react'
+import { useRef, type ReactNode } from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import galleryBottom from './assets/figma/gallery-bottom.png'
 import galleryMiddle from './assets/figma/gallery-middle.png'
 import galleryTop from './assets/figma/gallery-top.png'
@@ -10,6 +13,8 @@ import styleLeft from './assets/figma/style-left.png'
 import styleRight from './assets/figma/style-right.png'
 import StyleSection from './components/StyleSection'
 import { siteConfig } from './config/site'
+
+gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 type CtaProps = {
   children: ReactNode
@@ -33,8 +38,44 @@ const services = [
 ] as const
 
 export default function App() {
+  const pageRef = useRef<HTMLDivElement>(null)
+  const experienceRef = useRef<HTMLElement>(null)
+
+  useGSAP(() => {
+    const experience = experienceRef.current
+    if (!experience) return
+
+    const media = gsap.matchMedia()
+
+    media.add('(prefers-reduced-motion: no-preference)', () => {
+      const heroTimeline = gsap.timeline({ defaults: { duration: .85, ease: 'power3.out' } })
+
+      heroTimeline
+        .from('.site-header', { y: -24, opacity: 0, duration: .65 })
+        .from('.hero-copy > *', { y: 34, opacity: 0, stagger: .12 }, '-=.25')
+        .from('.portrait--hero-left', { x: -110, opacity: 0 }, '-=.55')
+        .from('.portrait--hero-right', { x: 110, opacity: 0 }, '<')
+        .from('.hero-trio .portrait', { y: 110, opacity: 0, stagger: .1 }, '-=.65')
+
+      const experienceTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: experience,
+          start: 'top 72%',
+          toggleActions: 'play none none reverse',
+        },
+        defaults: { ease: 'power3.out' },
+      })
+
+      experienceTimeline
+        .from('.experience-gallery img', { y: 110, opacity: 0, duration: 1, stagger: .14 })
+        .from('.experience-copy > *', { y: 42, opacity: 0, duration: .75, stagger: .1 }, '-=.65')
+    })
+
+    return () => media.revert()
+  }, { scope: pageRef })
+
   return (
-    <div className="site-shell">
+    <div ref={pageRef} className="site-shell">
       <header className="site-header">
         <a className="brand" href="#inicio">DISTRITO 011</a>
         <nav aria-label="Navegação principal">
@@ -66,7 +107,7 @@ export default function App() {
 
         <StyleSection />
 
-        <section className="experience-section">
+        <section ref={experienceRef} className="experience-section">
           <div className="experience-gallery" aria-label="Ambiente e atendimento da barbearia">
             <img src={galleryTop} alt="Atendimento na barbearia" />
             <img src={galleryMiddle} alt="Detalhe do espaço da barbearia" />

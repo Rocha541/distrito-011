@@ -26,11 +26,14 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
 .site-header nav { align-self: center; display: flex; align-items: center; gap: 12px; margin-top: 0; font-size: 16px; font-weight: 600; letter-spacing: -.48px; }
 .site-header > .cta { align-self: center; justify-self: end; }
 
-.cta { display: inline-flex; min-height: 51px; align-items: center; justify-content: center; padding: 15px 20px; border-radius: 16px; font-size: 16px; font-weight: 600; white-space: nowrap; transition: transform .2s ease, filter .2s ease; }
-.cta:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.cta { display: inline-flex; min-height: 51px; align-items: center; justify-content: center; padding: 15px 20px; border-radius: 16px; font-size: 16px; font-weight: 600; white-space: nowrap; transition: background-color .24s ease, color .24s ease, box-shadow .24s ease, filter .24s ease; }
+.cta:hover { box-shadow: 0 8px 22px rgba(0,0,0,.16); filter: saturate(1.08); }
 .cta--green { color: #fff; background: var(--green); }
 .cta--gray { color: #272626; background: var(--gray); }
 .cta--white { color: var(--green); background: #fff; }
+.cta--green:hover { background: #0d3426; }
+.cta--gray:hover { color: #171717; background: #a3a3a3; }
+.cta--white:hover { color: #0d3426; background: #deded9; }
 .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 
 .hero-section { position: relative; height: clamp(720px, 57.7vw, 997px); max-width: 1728px; margin: 0 auto; }
