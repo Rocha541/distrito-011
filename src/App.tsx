@@ -2,6 +2,7 @@ import { useRef, type ReactNode } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ArrowRight, Ruler, Scissors, UserRound, Waves } from 'lucide-react'
 import galleryBottom from './assets/figma/gallery-bottom.png'
 import galleryMiddle from './assets/figma/gallery-middle.png'
 import galleryTop from './assets/figma/gallery-top.png'
@@ -31,10 +32,10 @@ function Cta({ children, href, variant = 'green' }: CtaProps) {
 }
 
 const services = [
-  ['Corte Masculino', 'Um corte pensado para valorizar seu rosto, seu estilo e sua rotina, com acabamento preciso e finalização personalizada.'],
-  ['Barba Completa', 'Desenho, alinhamento e acabamento para deixar a barba mais definida, equilibrada e combinando melhor com o seu rosto.'],
-  ['Acabamento', 'Ideal para manter contornos, costeletas e detalhes sempre alinhados entre um corte completo e outro.'],
-  ['Consultoria de Estilo', 'Ajudamos você a escolher o corte que mais combina com seu cabelo, formato do rosto e estilo pessoal.'],
+  { icon: Scissors, title: 'Corte Masculino', description: 'Um corte pensado para valorizar seu rosto, seu estilo e sua rotina, com acabamento preciso e finalização personalizada.' },
+  { icon: Waves, title: 'Barba Completa', description: 'Desenho, alinhamento e acabamento para deixar a barba mais definida, equilibrada e combinando melhor com o seu rosto.' },
+  { icon: Ruler, title: 'Acabamento', description: 'Ideal para manter contornos, costeletas e detalhes sempre alinhados entre um corte completo e outro.' },
+  { icon: UserRound, title: 'Consultoria de Estilo', description: 'Ajudamos você a escolher o corte que mais combina com seu cabelo, formato do rosto e estilo pessoal.' },
 ] as const
 
 export default function App() {
@@ -125,13 +126,27 @@ export default function App() {
 
         <section className="services-section" id="servicos">
           <div className="services-heading">
-            <div><h2>Tudo que seu estilo precisa</h2><p>Corte, barba e cuidados pensados para manter seu visual sempre em dia.</p></div>
-            <Cta href={siteConfig.bookingUrl} variant="white">Agende seu corte</Cta>
+            <span className="services-eyebrow">Nossos serviços</span>
+            <h2>Tudo que seu estilo precisa</h2>
+            <p>Corte, barba e cuidados pensados para manter seu visual sempre em dia.</p>
+            <Cta href={siteConfig.bookingUrl}>Agende seu corte</Cta>
           </div>
           <div className="services-grid">
-            <article className="service-card service-card--wide"><h3>{services[0][0]}</h3><p>{services[0][1]}</p></article>
+            <article className="service-card service-card--wide">
+              <span className="service-icon"><Scissors aria-hidden="true" /></span>
+              <h3>{services[0].title}</h3>
+              <p>{services[0].description}</p>
+              <a className="service-link" href={siteConfig.bookingUrl} target="_blank" rel="noreferrer">Saiba mais <ArrowRight aria-hidden="true" /></a>
+            </article>
             <div className="service-photo"><img src={serviceWide} alt="Barbeiro realizando um corte" /></div>
-            {services.slice(1).map(([title, description]) => <article className="service-card" key={title}><h3>{title}</h3><p>{description}</p></article>)}
+            {services.slice(1).map(({ icon: Icon, title, description }) => (
+              <article className="service-card" key={title}>
+                <span className="service-icon"><Icon aria-hidden="true" /></span>
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <a className="service-link" href={siteConfig.bookingUrl} target="_blank" rel="noreferrer">Saiba mais <ArrowRight aria-hidden="true" /></a>
+              </article>
+            ))}
           </div>
         </section>
       </main>
