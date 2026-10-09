@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #101311;
+  --color-brand: #0f5c43;
+  --color-paper: #f7f5ef;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; min-width: 320px; background: var(--color-paper); color: var(--color-ink); }
+  a:focus-visible { outline: 3px solid var(--color-brand); outline-offset: 4px; }
+}
