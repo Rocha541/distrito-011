@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import galleryBottom from './assets/figma/gallery-bottom.png'
 import galleryMiddle from './assets/figma/gallery-middle.png'
 import galleryTop from './assets/figma/gallery-top.png'
@@ -8,6 +8,7 @@ import serviceWide from './assets/figma/service-wide.png'
 import styleCenter from './assets/figma/style-center.png'
 import styleLeft from './assets/figma/style-left.png'
 import styleRight from './assets/figma/style-right.png'
+import StyleSection from './components/StyleSection'
 import { siteConfig } from './config/site'
 
 type CtaProps = {
@@ -31,15 +32,7 @@ const services = [
   ['Consultoria de Estilo', 'Ajudamos você a escolher o corte que mais combina com seu cabelo, formato do rosto e estilo pessoal.'],
 ] as const
 
-const styleCards = [
-  { image: styleLeft, title: 'Textured Fade', description: 'Textura no topo, laterais limpas e um acabamento que valoriza o movimento natural do cabelo.' },
-  { image: heroLeft, title: 'Curly Fade', description: 'Ideal para cabelos ondulados, cacheados ou crespos, valorizando a textura sem deixar o corte pesado.' },
-  { image: styleRight, title: 'Low Fade', description: 'Transição suave nas laterais, desenho preciso e um visual moderno que funciona em diferentes rotinas.' },
-] as const
-
 export default function App() {
-  const [activeStyle, setActiveStyle] = useState<number | null>(null)
-
   return (
     <div className="site-shell">
       <header className="site-header">
@@ -71,30 +64,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="style-intro" id="estilos">
-          <div className="section-heading">
-            <h2>Estilo pensado para você</h2>
-            <p>Na Distrito, cada corte é pensado para valorizar o seu estilo, seu rosto e sua personalidade. Do clássico ao moderno, ajudamos você a encontrar o visual que realmente <strong>combina com você.</strong></p>
-            <Cta href={siteConfig.bookingUrl} variant="white">Agende seu corte</Cta>
-          </div>
-          <div className="style-showcase">
-            {styleCards.map((style, index) => (
-              <button
-                className={`style-card${activeStyle === index ? ' is-active' : ''}`}
-                key={style.title}
-                onClick={() => setActiveStyle(activeStyle === index ? null : index)}
-                type="button"
-                aria-pressed={activeStyle === index}
-              >
-                <img src={style.image} alt={`${style.title}: referência de corte masculino`} />
-                <span className="style-card__overlay">
-                  <strong>{style.title}</strong>
-                  <span>{style.description}</span>
-                </span>
-              </button>
-            ))}
-          </div>
-        </section>
+        <StyleSection />
 
         <section className="experience-section">
           <div className="experience-gallery" aria-label="Ambiente e atendimento da barbearia">
