@@ -65,6 +65,6 @@ it('fixa a seção por 150vh e move somente a galeria', () => {
   })
   expect(gsapMocks.timelineTo).toHaveBeenCalledWith(
     expect.any(HTMLElement),
-    expect.objectContaining({ yPercent: expect.any(Number), ease: 'none' }),
+    expect.objectContaining({ top: 0, height: '100vh', yPercent: 0, ease: 'none' }),
   )
 })
