@@ -68,9 +68,8 @@ it('fixa a seção por 150vh e move somente a galeria', () => {
   const [timelineOptions] = gsapMocks.timelineFactory.mock.calls.at(0)!
   const scrollTrigger = timelineOptions.scrollTrigger
   expect(scrollTrigger.pin).toBe(scrollTrigger.trigger)
-  expect(gsapMocks.gsapSet).toHaveBeenCalledWith(expect.any(HTMLElement), { yPercent: 0 })
   expect(gsapMocks.timelineTo).toHaveBeenCalledWith(
     expect.any(HTMLElement),
-    expect.objectContaining({ top: '-1vh', height: '102vh', yPercent: 0, ease: 'none' }),
+    expect.objectContaining({ top: '-1vh', height: '102vh', ease: 'none' }),
   )
 })

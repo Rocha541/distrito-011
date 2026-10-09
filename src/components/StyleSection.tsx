@@ -28,7 +28,6 @@ export default function StyleSection() {
     const media = gsap.matchMedia()
 
     const createScrollTimeline = (end: string) => {
-      gsap.set(showcase, { yPercent: 0 })
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: section,
@@ -40,7 +39,7 @@ export default function StyleSection() {
           invalidateOnRefresh: true,
         },
       })
-      timeline.to(showcase, { top: '-1vh', height: '102vh', yPercent: 0, ease: 'none' })
+      timeline.to(showcase, { top: '-1vh', height: '102vh', ease: 'none' })
     }
 
     media.add('(min-width: 701px) and (prefers-reduced-motion: no-preference)', () => {

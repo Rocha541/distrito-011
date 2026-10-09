@@ -55,7 +55,7 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
 .section-heading { width: min(837px, calc(100% - 40px)); margin: 0 auto; padding-top: 90px; text-align: center; }
 .section-heading h2 { margin: 0; font-size: 72px; font-weight: 900; line-height: 1.064; letter-spacing: -2.16px; }
 .section-heading p { margin: 21px 0 58px; font-size: 16px; line-height: 1.3; }
-.style-showcase { position: absolute; z-index: 3; top: 48%; left: 0; right: 0; height: min(720px, 72vh); display: grid; grid-template-columns: 1fr 1.025fr 1.083fr; will-change: transform; }
+.style-showcase { position: absolute; z-index: 3; top: 66%; left: 0; right: 0; height: min(720px, 72vh); display: grid; grid-template-columns: 1fr 1.025fr 1.083fr; will-change: top, height; }
 .style-card { position: relative; min-width: 0; padding: 0; overflow: hidden; border: 0; border-radius: 0; background: #000; color: #fff; cursor: pointer; }
 .style-card img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: filter .45s ease; }
 .style-card:hover img, .style-card:focus-visible img, .style-card.is-active img { filter: brightness(.35); }
@@ -130,7 +130,7 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
   .hero-trio .portrait--right { right: 9%; }
   .section-heading h2, .services-heading h2 { font-size: clamp(42px, 8vw, 64px); }
   .style-pin { min-height: 680px; }
-  .style-showcase { top: 52%; height: min(650px, 66vh); }
+  .style-showcase { top: 68%; height: min(650px, 66vh); }
   .experience-section { grid-template-columns: 1fr; padding: 70px 24px; }
   .experience-gallery { min-height: 700px; max-width: 760px; width: 100%; margin: 0 auto; }
   .experience-copy { padding: 40px 20px; }
@@ -150,15 +150,14 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
   .section-heading { padding-top: 76px; }
   .section-heading p { margin-bottom: 34px; }
   .style-pin { min-height: 620px; }
-  .style-showcase { top: 55%; height: min(520px, 58vh); }
+  .style-showcase { top: 70%; height: min(520px, 58vh); }
   .style-card__overlay { padding: 0 12px 72px; }
   .style-card__overlay strong { font-size: 28px; letter-spacing: -1px; }
   .style-card__overlay span { display: none; }
-  .experience-gallery { min-height: 590px; }
-  .experience-gallery img { width: 205px; height: 305px; }
-  .experience-gallery img:nth-child(1) { top: 10px; left: 0; }
-  .experience-gallery img:nth-child(2) { top: 145px; left: auto; right: 0; }
-  .experience-gallery img:nth-child(3) { top: 280px; left: 12px; }
+  .experience-gallery { min-height: auto; display: flex; flex-direction: column; gap: 24px; }
+  .experience-gallery img { position: static; width: min(78vw, 320px); height: auto; aspect-ratio: 313 / 466; }
+  .experience-gallery img:nth-child(1), .experience-gallery img:nth-child(3) { align-self: flex-start; }
+  .experience-gallery img:nth-child(2) { align-self: flex-end; }
   .experience-copy { padding-inline: 0; }
   .experience-copy p { line-height: 1.35; }
   .services-heading { align-items: flex-start; gap: 28px; flex-direction: column; }

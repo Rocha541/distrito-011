@@ -61,13 +61,13 @@ export default function App() {
         scrollTrigger: {
           trigger: experience,
           start: 'top 72%',
-          toggleActions: 'play none none reverse',
+          toggleActions: window.innerWidth <= 700 ? 'play none none none' : 'play none none reverse',
         },
         defaults: { ease: 'power3.out' },
       })
 
       experienceTimeline
-        .from('.experience-gallery img', { y: 110, opacity: 0, duration: 1, stagger: .14 })
+        .from('.experience-gallery img', { y: window.innerWidth <= 700 ? 0 : 110, opacity: 0, duration: 1, stagger: .14 })
         .from('.experience-copy > *', { y: 42, opacity: 0, duration: .75, stagger: .1 }, '-=.65')
     })
 
