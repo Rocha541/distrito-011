@@ -10,7 +10,9 @@ Transformar a segunda seção da landing page em uma composição de rolagem fix
 - A fixação começa quando a seção verde alcança o topo da janela.
 - O conteúdo textual e o fundo verde permanecem fixos durante todo o trecho.
 - As três imagens começam abaixo da área principal e sobem juntas, mantendo suas três colunas.
-- No final do percurso, as imagens atravessam visualmente a seção e a próxima seção volta a rolar normalmente.
+- Durante a subida, o conjunto cresce progressivamente até ocupar exatamente 100% da largura e 100% da altura visível da tela.
+- A timeline tem um único sentido visual: entrada das imagens, expansão total e liberação da próxima seção. As imagens não começam a sair ou descer antes do final.
+- A seção seguinte só volta a rolar depois que o conjunto alcança o estado final de tela inteira.
 - A animação responde diretamente ao scroll, com `scrub`, sem reprodução automática independente da posição da página.
 
 ## Interação dos cards
@@ -25,7 +27,8 @@ Transformar a segunda seção da landing page em uma composição de rolagem fix
 - Registrar `useGSAP` e `ScrollTrigger` uma única vez no módulo.
 - Criar uma referência React para a seção e limitar todos os seletores ao seu escopo.
 - Construir uma timeline com `pin: true`, `scrub: true` e distância de rolagem equivalente a cerca de `150vh`.
-- Animar somente o contêiner das imagens no eixo vertical.
+- Animar o contêiner das imagens no eixo vertical e em altura, terminando em `top: 0` e `height: 100vh` dentro do painel fixado.
+- Manter a largura do conjunto em 100% durante todo o percurso, preservando as três colunas.
 - Usar `useGSAP` para que timelines, estilos inline e ScrollTriggers sejam revertidos quando o componente desmontar.
 
 ## Responsividade e acessibilidade
@@ -39,6 +42,7 @@ Transformar a segunda seção da landing page em uma composição de rolagem fix
 
 - Conferir o comportamento nas larguras de notebook, desktop e celular.
 - Confirmar que a seção permanece fixada durante aproximadamente 1,5 tela.
-- Confirmar que apenas as imagens se movem durante o scroll.
+- Confirmar que apenas as imagens se movem e crescem durante o scroll.
+- Confirmar que o estado final das imagens cobre 100% da viewport antes de a próxima seção aparecer.
 - Confirmar que hover e clique não movem nem ampliam os cards.
 - Executar testes, lint e build de produção.
