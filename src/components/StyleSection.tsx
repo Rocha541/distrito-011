@@ -28,7 +28,7 @@ export default function StyleSection() {
     const media = gsap.matchMedia()
 
     const createScrollTimeline = (end: string) => {
-      gsap.set(showcase, { yPercent: 72 })
+      gsap.set(showcase, { yPercent: 0 })
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: section,

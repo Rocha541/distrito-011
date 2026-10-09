@@ -6,6 +6,7 @@ import StyleSection from './StyleSection'
 const gsapMocks = vi.hoisted(() => {
   const timelineTo = vi.fn()
   return {
+    gsapSet: vi.fn(),
     timelineTo,
     timelineFactory: vi.fn((_options: { scrollTrigger: { trigger: HTMLElement; pin: HTMLElement } }) => ({ to: timelineTo })),
   }
@@ -19,7 +20,7 @@ vi.mock('gsap', () => ({
       revert: vi.fn(),
     }),
     timeline: gsapMocks.timelineFactory,
-    set: vi.fn(),
+    set: gsapMocks.gsapSet,
   },
 }))
 
@@ -35,6 +36,7 @@ vi.mock('@gsap/react', async () => {
 beforeEach(() => {
   gsapMocks.timelineFactory.mockClear()
   gsapMocks.timelineTo.mockClear()
+  gsapMocks.gsapSet.mockClear()
 })
 
 it('revela um estilo sem mover a estrutura do card', async () => {
@@ -66,6 +68,7 @@ it('fixa a seção por 150vh e move somente a galeria', () => {
   const [timelineOptions] = gsapMocks.timelineFactory.mock.calls.at(0)!
   const scrollTrigger = timelineOptions.scrollTrigger
   expect(scrollTrigger.pin).toBe(scrollTrigger.trigger)
+  expect(gsapMocks.gsapSet).toHaveBeenCalledWith(expect.any(HTMLElement), { yPercent: 0 })
   expect(gsapMocks.timelineTo).toHaveBeenCalledWith(
     expect.any(HTMLElement),
     expect.objectContaining({ top: '-1vh', height: '102vh', yPercent: 0, ease: 'none' }),
