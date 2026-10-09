@@ -126,7 +126,6 @@ export default function App() {
 
         <section className="services-section" id="servicos">
           <div className="services-heading">
-            <span className="services-eyebrow">Nossos serviços</span>
             <h2>Tudo que seu estilo precisa</h2>
             <p>Corte, barba e cuidados pensados para manter seu visual sempre em dia.</p>
             <Cta href={siteConfig.bookingUrl}>Agende seu corte</Cta>
