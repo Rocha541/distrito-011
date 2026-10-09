@@ -1,18 +1,129 @@
+import { useState, type ReactNode } from 'react'
+import galleryBottom from './assets/figma/gallery-bottom.png'
+import galleryMiddle from './assets/figma/gallery-middle.png'
+import galleryTop from './assets/figma/gallery-top.png'
+import heroLeft from './assets/figma/hero-left.png'
+import heroRight from './assets/figma/hero-right.png'
+import serviceWide from './assets/figma/service-wide.png'
+import styleCenter from './assets/figma/style-center.png'
+import styleLeft from './assets/figma/style-left.png'
+import styleRight from './assets/figma/style-right.png'
 import { siteConfig } from './config/site'
-import type { ReactNode } from 'react'
 
-function Link({ href, children }: { href: string; children: ReactNode }) {
-  return <a className="rounded-full bg-brand px-5 py-3 font-semibold text-white hover:bg-ink" href={href} target="_blank" rel="noreferrer">{children}</a>
+type CtaProps = {
+  children: ReactNode
+  href: string
+  variant?: 'green' | 'gray' | 'white'
 }
 
+function Cta({ children, href, variant = 'green' }: CtaProps) {
+  return (
+    <a className={`cta cta--${variant}`} href={href} target="_blank" rel="noreferrer">
+      {children}
+    </a>
+  )
+}
+
+const services = [
+  ['Corte Masculino', 'Um corte pensado para valorizar seu rosto, seu estilo e sua rotina, com acabamento preciso e finalização personalizada.'],
+  ['Barba Completa', 'Desenho, alinhamento e acabamento para deixar a barba mais definida, equilibrada e combinando melhor com o seu rosto.'],
+  ['Acabamento', 'Ideal para manter contornos, costeletas e detalhes sempre alinhados entre um corte completo e outro.'],
+  ['Consultoria de Estilo', 'Ajudamos você a escolher o corte que mais combina com seu cabelo, formato do rosto e estilo pessoal.'],
+] as const
+
+const styleCards = [
+  { image: styleLeft, title: 'Textured Fade', description: 'Textura no topo, laterais limpas e um acabamento que valoriza o movimento natural do cabelo.' },
+  { image: heroLeft, title: 'Curly Fade', description: 'Ideal para cabelos ondulados, cacheados ou crespos, valorizando a textura sem deixar o corte pesado.' },
+  { image: styleRight, title: 'Low Fade', description: 'Transição suave nas laterais, desenho preciso e um visual moderno que funciona em diferentes rotinas.' },
+] as const
+
 export default function App() {
-  return <div className="min-h-screen bg-paper text-ink">
-    <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6"><strong>Distrito 011</strong><Link href={siteConfig.bookingUrl}>Agendar corte</Link></header>
-    <main>
-      <section className="mx-auto grid max-w-6xl gap-10 px-5 py-20 lg:grid-cols-2"><div><p className="font-semibold text-brand">BARBEARIA • SÃO PAULO</p><h1 className="mt-4 text-5xl font-black sm:text-7xl">Seu estilo.<br />Seu distrito.</h1><p className="mt-6 max-w-lg text-lg">Cortes precisos, atendimento de verdade e um espaço feito para você sair melhor do que entrou.</p><div className="mt-8 flex flex-wrap gap-4"><Link href={siteConfig.bookingUrl}>Agendar corte</Link><Link href={siteConfig.whatsappUrl}>Falar no WhatsApp</Link></div></div><div className="min-h-80 rounded-3xl bg-ink p-8 text-3xl font-bold text-paper">O seu próximo corte começa aqui.</div></section>
-      <section className="bg-ink py-16 text-paper"><div className="mx-auto max-w-6xl px-5"><p className="font-semibold text-green-300">SERVIÇOS</p><h2 className="mt-2 text-4xl font-black">Escolha o seu.</h2><div className="mt-8 grid gap-4 sm:grid-cols-3">{['Corte clássico','Barba','Corte + barba'].map((x) => <article className="rounded-2xl border border-white/20 p-6" key={x}><h3 className="text-xl font-bold">{x}</h3><p className="mt-2 text-white/70">Atendimento com hora marcada.</p></article>)}</div></div></section>
-      <section className="mx-auto max-w-6xl px-5 py-16"><p className="font-semibold text-brand">O TIME</p><h2 className="mt-2 text-4xl font-black">Quem cuida do seu estilo.</h2><div className="mt-8 grid gap-4 sm:grid-cols-3">{['André','Caio','Murilo'].map((x) => <article className="rounded-2xl bg-white p-6 shadow-sm" key={x}><div className="h-48 rounded-xl bg-stone-200" /><h3 className="mt-4 text-xl font-bold">{x}</h3><p>Barbeiro</p></article>)}</div></section>
-    </main>
-    <footer className="bg-brand px-5 py-12 text-paper"><div className="mx-auto flex max-w-6xl items-center justify-between gap-6"><div><strong className="text-2xl">Distrito 011</strong><p>Pronto para mudar o visual?</p></div><Link href={siteConfig.whatsappUrl}>WhatsApp</Link></div></footer>
-  </div>
+  const [activeStyle, setActiveStyle] = useState<number | null>(null)
+
+  return (
+    <div className="site-shell">
+      <header className="site-header">
+        <a className="brand" href="#inicio">DISTRITO 011</a>
+        <nav aria-label="Navegação principal">
+          <a href="#inicio">Início</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#estilos">Estilos</a>
+        </nav>
+        <Cta href={siteConfig.bookingUrl}>Agende seu corte</Cta>
+      </header>
+
+      <main>
+        <section className="hero-section" id="inicio">
+          <img className="portrait portrait--hero-left" src={heroLeft} alt="Modelo com corte masculino clássico" />
+          <img className="portrait portrait--hero-right" src={heroRight} alt="Modelo com corte masculino texturizado" />
+          <div className="hero-copy">
+            <h1>Seu estilo.<br />Seu distrito.</h1>
+            <p>Corte, barba e cuidado nos detalhes para quem entende que estilo não é só aparência, <strong>é identidade.</strong></p>
+            <div className="cta-row">
+              <Cta href={siteConfig.whatsappUrl} variant="gray">Chamar no WhatsApp</Cta>
+              <Cta href={siteConfig.bookingUrl}>Agende seu corte</Cta>
+            </div>
+          </div>
+          <div className="hero-trio" aria-label="Referências de estilos de corte">
+            <img className="portrait portrait--left" src={styleLeft} alt="Modelo com corte fade" />
+            <img className="portrait portrait--center" src={styleCenter} alt="Modelo com barba e corte baixo" />
+            <img className="portrait portrait--right" src={styleRight} alt="Modelo com corte lateral baixo" />
+          </div>
+        </section>
+
+        <section className="style-intro" id="estilos">
+          <div className="section-heading">
+            <h2>Estilo pensado para você</h2>
+            <p>Na Distrito, cada corte é pensado para valorizar o seu estilo, seu rosto e sua personalidade. Do clássico ao moderno, ajudamos você a encontrar o visual que realmente <strong>combina com você.</strong></p>
+            <Cta href={siteConfig.bookingUrl} variant="white">Agende seu corte</Cta>
+          </div>
+          <div className="style-showcase">
+            {styleCards.map((style, index) => (
+              <button
+                className={`style-card${activeStyle === index ? ' is-active' : ''}`}
+                key={style.title}
+                onClick={() => setActiveStyle(activeStyle === index ? null : index)}
+                type="button"
+                aria-pressed={activeStyle === index}
+              >
+                <img src={style.image} alt={`${style.title}: referência de corte masculino`} />
+                <span className="style-card__overlay">
+                  <strong>{style.title}</strong>
+                  <span>{style.description}</span>
+                </span>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <section className="experience-section">
+          <div className="experience-gallery" aria-label="Ambiente e atendimento da barbearia">
+            <img src={galleryTop} alt="Atendimento na barbearia" />
+            <img src={galleryMiddle} alt="Detalhe do espaço da barbearia" />
+            <img src={galleryBottom} alt="Finalização de um corte" />
+          </div>
+          <div className="experience-copy">
+            <h2>Seu momento começa antes do corte.</h2>
+            <p>Na Distrito, cada detalhe <strong>foi pensado para transformar uma rotina em uma experiência.</strong> Atendimento próximo, ambiente confortável e profissionais que <strong>entendem o que funciona para você.</strong></p>
+            <div className="cta-row">
+              <Cta href={siteConfig.whatsappUrl} variant="gray">Chamar no WhatsApp</Cta>
+              <Cta href={siteConfig.bookingUrl}>Agende seu corte</Cta>
+            </div>
+          </div>
+        </section>
+
+        <section className="services-section" id="servicos">
+          <div className="services-heading">
+            <div><h2>Tudo que seu estilo precisa</h2><p>Corte, barba e cuidados pensados para manter seu visual sempre em dia.</p></div>
+            <Cta href={siteConfig.bookingUrl} variant="white">Agende seu corte</Cta>
+          </div>
+          <div className="services-grid">
+            <article className="service-card service-card--wide"><h3>{services[0][0]}</h3><p>{services[0][1]}</p></article>
+            <div className="service-photo"><img src={serviceWide} alt="Barbeiro realizando um corte" /></div>
+            {services.slice(1).map(([title, description]) => <article className="service-card" key={title}><h3>{title}</h3><p>{description}</p></article>)}
+          </div>
+        </section>
+      </main>
+    </div>
+  )
 }
