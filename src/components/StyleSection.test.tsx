@@ -28,7 +28,7 @@ vi.mock('gsap/ScrollTrigger', () => ({ ScrollTrigger: {} }))
 vi.mock('@gsap/react', async () => {
   const React = await import('react')
   return {
-    useGSAP: (callback: () => void) => React.useLayoutEffect(callback, []),
+    useGSAP: (callback: () => void) => React.useLayoutEffect(callback, [callback]),
   }
 })
 
@@ -47,6 +47,8 @@ it('revela um estilo sem mover a estrutura do card', async () => {
   expect(card).toHaveAttribute('aria-pressed', 'true')
   expect(document.querySelector('.style-pin')).toBeInTheDocument()
   expect(document.querySelector('.style-showcase')).toBeInTheDocument()
+  expect(document.querySelector('.style-pin')).toContainElement(document.querySelector('.section-heading'))
+  expect(document.querySelector('.style-pin')).toContainElement(document.querySelector('.style-showcase'))
 })
 
 it('fixa a seção por 150vh e move somente a galeria', () => {
