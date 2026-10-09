@@ -18,14 +18,12 @@ const styleCards = [
 export default function StyleSection() {
   const [activeStyle, setActiveStyle] = useState<number | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
-  const pinRef = useRef<HTMLDivElement>(null)
   const showcaseRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
     const section = sectionRef.current
-    const pin = pinRef.current
     const showcase = showcaseRef.current
-    if (!section || !pin || !showcase) return
+    if (!section || !showcase) return
 
     const media = gsap.matchMedia()
 
@@ -36,13 +34,13 @@ export default function StyleSection() {
           trigger: section,
           start: 'top top',
           end,
-          pin,
+          pin: section,
           scrub: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
         },
       })
-      timeline.to(showcase, { top: 0, height: '100vh', yPercent: 0, ease: 'none' })
+      timeline.to(showcase, { top: '-1vh', height: '102vh', yPercent: 0, ease: 'none' })
     }
 
     media.add('(min-width: 701px) and (prefers-reduced-motion: no-preference)', () => {
@@ -62,7 +60,7 @@ export default function StyleSection() {
 
   return (
     <section ref={sectionRef} className="style-intro" id="estilos">
-      <div ref={pinRef} className="style-pin">
+      <div className="style-pin">
         <div className="section-heading">
           <h2>Estilo pensado para você</h2>
           <p>Na Distrito, cada corte é pensado para valorizar o seu estilo, seu rosto e sua personalidade. Do clássico ao moderno, ajudamos você a encontrar o visual que realmente <strong>combina com você.</strong></p>

@@ -7,7 +7,7 @@ const gsapMocks = vi.hoisted(() => {
   const timelineTo = vi.fn()
   return {
     timelineTo,
-    timelineFactory: vi.fn(() => ({ to: timelineTo })),
+    timelineFactory: vi.fn((_options: { scrollTrigger: { trigger: HTMLElement; pin: HTMLElement } }) => ({ to: timelineTo })),
   }
 })
 
@@ -63,8 +63,11 @@ it('fixa a seção por 150vh e move somente a galeria', () => {
       invalidateOnRefresh: true,
     }),
   })
+  const [timelineOptions] = gsapMocks.timelineFactory.mock.calls.at(0)!
+  const scrollTrigger = timelineOptions.scrollTrigger
+  expect(scrollTrigger.pin).toBe(scrollTrigger.trigger)
   expect(gsapMocks.timelineTo).toHaveBeenCalledWith(
     expect.any(HTMLElement),
-    expect.objectContaining({ top: 0, height: '100vh', yPercent: 0, ease: 'none' }),
+    expect.objectContaining({ top: '-1vh', height: '102vh', yPercent: 0, ease: 'none' }),
   )
 })
