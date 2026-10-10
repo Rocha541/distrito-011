@@ -2,7 +2,7 @@ import { useRef, type ReactNode } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ArrowRight, Ruler, Scissors, UserRound, Waves } from 'lucide-react'
+import { ArrowRight, BadgePercent, BellRing, CalendarCheck, Ruler, Scissors, Sparkles, UserRound, Waves } from 'lucide-react'
 import galleryBottom from './assets/figma/gallery-bottom.png'
 import galleryMiddle from './assets/figma/gallery-middle.png'
 import galleryTop from './assets/figma/gallery-top.png'
@@ -146,6 +146,38 @@ export default function App() {
                 <a className="service-link" href={siteConfig.bookingUrl} target="_blank" rel="noreferrer">Saiba mais <ArrowRight aria-hidden="true" /></a>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="membership-section" id="plano">
+          <div className="membership-heading">
+            <span>Plano recorrente</span>
+            <h2>Seu estilo sempre em dia.</h2>
+            <p>Uma rotina simples para quem não quer esperar o visual perder o corte.</p>
+          </div>
+
+          <div className="membership-card">
+            <div className="membership-summary">
+              <span className="membership-name">Distrito Club</span>
+              <div className="membership-price">
+                <small>Mensalidade</small>
+                <strong>R$ 70/mês</strong>
+              </div>
+              <p>Você faz seu atendimento principal e, depois de 15 dias, volta para renovar o visual pagando metade do valor.</p>
+              <Cta href={siteConfig.whatsappUrl} variant="white">Quero conhecer o plano</Cta>
+            </div>
+
+            <div className="membership-details">
+              <div className="membership-highlight">
+                <span className="membership-benefit-icon"><BadgePercent aria-hidden="true" /></span>
+                <div><strong>50% de desconto após 15 dias</strong><p>Retorne para a manutenção do corte dentro do período e pague apenas metade do valor.</p></div>
+              </div>
+              <div className="membership-benefits">
+                <div><span className="membership-benefit-icon"><CalendarCheck aria-hidden="true" /></span><strong>Agenda prioritária</strong><p>Mais facilidade para manter seus horários organizados.</p></div>
+                <div><span className="membership-benefit-icon"><BellRing aria-hidden="true" /></span><strong>Lembrete de retorno</strong><p>Avisamos quando estiver chegando a hora da manutenção.</p></div>
+                <div><span className="membership-benefit-icon"><Sparkles aria-hidden="true" /></span><strong>Visual consistente</strong><p>Seu corte permanece alinhado durante todo o mês.</p></div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
