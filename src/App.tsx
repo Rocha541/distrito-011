@@ -128,7 +128,7 @@ export default function App() {
           <div className="services-heading">
             <h2>Tudo que seu estilo precisa</h2>
             <p>Corte, barba e cuidados pensados para manter seu visual sempre em dia.</p>
-            <Cta href={siteConfig.bookingUrl}>Agende seu corte</Cta>
+            <Cta href={siteConfig.bookingUrl} variant="white">Agende seu corte</Cta>
           </div>
           <div className="services-grid">
             <article className="service-card service-card--wide">
