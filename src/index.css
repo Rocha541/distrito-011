@@ -83,16 +83,16 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
 .services-heading p { margin: 14px 0 28px; color: #d5dfda; font-size: 16px; }
 .services-grid { margin-top: 58px; display: grid; grid-template-columns: .92fr 1fr 1fr; gap: 16px; }
 .service-card, .service-photo { min-height: 280px; border-radius: 16px; overflow: hidden; }
-.service-card { display: flex; flex-direction: column; align-items: flex-start; padding: 30px; border: 1px solid rgba(255,255,255,.72); background: rgba(255,255,255,.96); color: var(--green); }
+.service-card { display: flex; flex-direction: column; align-items: flex-start; padding: 30px; border: 1px solid rgba(255,255,255,.14); background: var(--deep-green); color: #fff; }
 .service-card h3 { margin: 16px 0 7px; font-size: 28px; font-weight: 800; line-height: 1.1; letter-spacing: -1.12px; }
-.service-card p { margin: 0; max-width: 390px; color: #707773; font-size: 16px; line-height: 1.25; }
+.service-card p { margin: 0; max-width: 390px; color: #ced9d4; font-size: 16px; line-height: 1.25; }
 .service-card--wide { grid-column: 1; }
 .service-photo { grid-column: 2 / 4; }
 .service-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.service-icon { display: inline-flex; width: 56px; height: 56px; align-items: center; justify-content: center; border-radius: 10px; background: #e7ebe7; }
+.service-icon { display: inline-flex; width: 56px; height: 56px; align-items: center; justify-content: center; border-radius: 10px; background: rgba(255,255,255,.11); color: #fff; }
 .service-icon svg { width: 27px; height: 27px; stroke-width: 1.8; }
-.service-link { display: inline-flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 20px; color: #49645a; font-size: 14px; border-bottom: 1px solid #9daaa4; transition: color .2s ease, border-color .2s ease; }
-.service-link:hover { color: var(--green); border-color: var(--green); }
+.service-link { display: inline-flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 20px; color: #c7d5cf; font-size: 14px; border-bottom: 1px solid #71877e; transition: color .2s ease, border-color .2s ease; }
+.service-link:hover { color: #fff; border-color: #fff; }
 .service-link svg { width: 16px; height: 16px; }
 .service-card--wide, .service-photo { height: 300px; min-height: 300px; }
 
