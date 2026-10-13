@@ -23,6 +23,13 @@ it('mantém as seções existentes na nova ordem sem perder seus CTAs', () => {
 
   expect(positions.every((position) => position >= 0)).toBe(true)
   expect(positions).toEqual([...positions].sort((a, b) => a - b))
-  expect(screen.getByRole('link', { name: 'Chamar no WhatsApp' })).toHaveAttribute('href', 'https://wa.me/5511940111517')
+  expect(screen.getAllByRole('link', { name: 'Chamar no WhatsApp' })[0]).toHaveAttribute('href', 'https://wa.me/5511940111517')
   expect(screen.getAllByRole('link', { name: 'Agende seu corte' })[0]).toHaveAttribute('href', 'https://appbarber.com.br/')
+})
+
+it('oferece um CTA exclusivo para agendar no ponto de conversão', () => {
+  render(<App />)
+
+  expect(screen.getByRole('heading', { name: 'Pronto para mudar o visual?' })).toBeInTheDocument()
+  expect(screen.getByRole('link', { name: 'Agendar meu horário' })).toHaveAttribute('href', 'https://appbarber.com.br/')
 })

@@ -96,6 +96,12 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
 .service-link svg { width: 16px; height: 16px; }
 .service-card--wide, .service-photo { height: 300px; min-height: 300px; }
 
+.booking-cta-section { padding: 112px 24px; background: #f7f8f6; color: var(--green); text-align: center; }
+.booking-cta-section__content { width: min(640px, 100%); margin: 0 auto; }
+.booking-cta-section h2 { margin: 0; font-size: clamp(44px, 5vw, 64px); font-weight: 900; line-height: 1.064; letter-spacing: -2.56px; }
+.booking-cta-section p { margin: 18px auto 32px; color: #6d7471; font-size: 17px; line-height: 1.4; }
+.booking-cta-section__link:focus-visible { outline: 3px solid #d8aa52; outline-offset: 4px; }
+
 .membership-section { padding: 126px max(24px, calc((100vw - 1428px) / 2)) 142px; background: #fff; color: var(--green); }
 .membership-heading { max-width: 800px; margin: 0 auto; text-align: center; }
 .membership-heading > span { color: #78817d; font-size: 13px; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; }
@@ -177,6 +183,7 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
   .experience-copy { padding: 40px 20px; }
   .experience-copy h2 { font-size: clamp(44px, 8vw, 64px); }
   .services-section { padding-top: 86px; }
+  .booking-cta-section { padding-top: 96px; padding-bottom: 96px; }
 }
 
 @media (max-width: 700px) {
@@ -208,6 +215,7 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
   .service-card { min-height: 280px; }
   .service-photo { min-height: 230px; }
   .service-card h3 { font-size: 30px; }
+  .booking-cta-section { padding-top: 78px; padding-bottom: 78px; }
   .membership-section { padding-top: 86px; padding-bottom: 96px; }
   .membership-heading h2 { font-size: 44px; }
   .membership-heading p { line-height: 1.35; }

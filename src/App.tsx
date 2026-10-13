@@ -12,6 +12,7 @@ import serviceWide from './assets/figma/service-wide.png'
 import styleCenter from './assets/figma/style-center.png'
 import styleLeft from './assets/figma/style-left.png'
 import styleRight from './assets/figma/style-right.png'
+import BookingCtaSection from './components/BookingCtaSection'
 import StyleSection from './components/StyleSection'
 import { siteConfig } from './config/site'
 
@@ -148,6 +149,8 @@ export default function App() {
             ))}
           </div>
         </section>
+
+        <BookingCtaSection />
 
         <section className="membership-section" id="plano">
           <div className="membership-heading">
