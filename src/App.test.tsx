@@ -33,3 +33,11 @@ it('oferece um CTA exclusivo para agendar no ponto de conversão', () => {
   expect(screen.getByRole('heading', { name: 'Pronto para mudar o visual?' })).toBeInTheDocument()
   expect(screen.getByRole('link', { name: 'Agendar meu horário' })).toHaveAttribute('href', 'https://appbarber.com.br/')
 })
+
+it('expõe no footer os dados comerciais confirmados', () => {
+  render(<App />)
+
+  expect(screen.getByText('Av. Aimara, 527 | Embu das Artes')).toBeInTheDocument()
+  expect(screen.getByText('Das 9h às 19h')).toBeInTheDocument()
+  expect(screen.getByText('Dinheiro, Pix e cartão')).toBeInTheDocument()
+})

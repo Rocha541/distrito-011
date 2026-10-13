@@ -13,6 +13,7 @@ import styleCenter from './assets/figma/style-center.png'
 import styleLeft from './assets/figma/style-left.png'
 import styleRight from './assets/figma/style-right.png'
 import BookingCtaSection from './components/BookingCtaSection'
+import SiteFooter from './components/SiteFooter'
 import StyleSection from './components/StyleSection'
 import { siteConfig } from './config/site'
 
@@ -38,6 +39,14 @@ const services = [
   { icon: Ruler, title: 'Acabamento', description: 'Ideal para manter contornos, costeletas e detalhes sempre alinhados entre um corte completo e outro.' },
   { icon: UserRound, title: 'Consultoria de Estilo', description: 'Ajudamos você a escolher o corte que mais combina com seu cabelo, formato do rosto e estilo pessoal.' },
 ] as const
+
+const footerDetails = {
+  address: 'Av. Aimara, 527 | Embu das Artes',
+  hours: 'Das 9h às 19h',
+  paymentMethods: 'Dinheiro, Pix e cartão',
+  whatsappUrl: siteConfig.whatsappUrl,
+  instagramUrl: 'https://www.instagram.com/barbeariadistrito011/',
+} as const
 
 export default function App() {
   const pageRef = useRef<HTMLDivElement>(null)
@@ -183,6 +192,8 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        <SiteFooter details={footerDetails} />
       </main>
     </div>
   )
