@@ -1,7 +1,7 @@
 # Estrutura de conversão para agendamento — Distrito 011
 
 **Data:** 2026-10-13  
-**Status:** aguardando revisão do usuário
+**Status:** aguardando confirmação da restrição de implementação
 
 ## Objetivo
 
@@ -13,26 +13,35 @@ Reorganizar a landing page para priorizar o primeiro agendamento avulso. A pági
 - Conversão de apoio: contato pelo WhatsApp para dúvidas.
 - Conversão secundária: interesse no Distrito Club após entender o primeiro atendimento.
 
-Até a seção do Distrito Club, o CTA principal permanece **“Agende seu corte”**. CTAs de WhatsApp devem ser alternativas de suporte, sem competir visualmente com o agendamento.
+Os CTAs existentes permanecem exatamente como estão. O novo bloco de conversão terá **“Agendar meu horário”** como seu único CTA; WhatsApp continuará apenas nos pontos em que já existe ou dentro de uma nova seção quando for necessário para suporte.
+
+## Restrição de preservação
+
+As seções que já existem não serão redesenhadas nem editadas nesta etapa. A implementação pode apenas mudar a posição delas na página.
+
+Isso preserva integralmente, nas seções existentes:
+
+- textos e conteúdo;
+- imagens e seus recortes;
+- botões, rótulos e destinos;
+- cores, tipografia, espaçamentos, estilos e animações/movimentos;
+- estrutura interna e comportamento atual.
+
+Somente seções novas podem receber conteúdo e design novos. Elas serão construídas como blocos isolados para ajustes posteriores do usuário.
 
 ## Arquitetura da página
 
 ### 1. Hero — desejo e ação
 
-- Mantém a proposta “Seu estilo. Seu distrito.”
-- Explica brevemente corte, barba e cuidado nos detalhes.
-- CTA principal: **Agende seu corte**.
-- CTA secundário: **Tirar dúvida no WhatsApp**.
+- Permanece inalterado; apenas ocupa a primeira posição.
 
 ### 2. Estilos pensados para você — repertório
 
-- Mantém os estilos de corte como inspiração visual.
-- Reforça a personalização por tipo de cabelo, formato do rosto e rotina.
-- CTA principal: **Agende seu corte**.
+- Permanece inalterado; apenas é reposicionado depois do Hero.
 
-### 3. Seu atendimento, do seu jeito — experiência e tranquilidade
+### 3. Ambiente — experiência e tranquilidade
 
-Substitui a seção de ambiente isolada. As fotos do espaço permanecem, mas passam a comprovar uma experiência concreta, organizada em quatro momentos:
+Nesta etapa, a seção atual de ambiente é apenas reposicionada; seu conteúdo e estilo não mudam. Em uma fase futura, ela poderá evoluir para uma seção de experiência organizada em quatro momentos:
 
 1. Conversa inicial para entender a intenção e a rotina do cliente.
 2. Orientação de estilo para escolher a melhor solução.
@@ -44,9 +53,7 @@ O ambiente deve apoiar visualmente essa história, e não ser o único assunto d
 ### 4. Serviços — clareza de escolha
 
 - Mantém Corte Masculino, Barba Completa, Acabamento e Consultoria de Estilo.
-- Cada item explica o resultado que entrega.
-- Adicionar duração e/ou preço inicial apenas se forem informações corretas e disponíveis.
-- CTA principal: **Agende seu corte**.
+- Nesta etapa, seu conteúdo, aparência, CTA e estrutura interna permanecem inalterados.
 
 ### 5. Quem já passou por aqui — prova social
 
@@ -63,9 +70,8 @@ O conteúdo deve responder a três objeções: qualidade do corte, qualidade do 
 
 ### 7. Distrito Club — manutenção e recorrência
 
-- Mantém a oferta mensal atual.
-- Nova posição e enquadramento: benefício para manter o visual após a primeira experiência, e não a primeira decisão da visita.
-- CTA: **Conhecer o Distrito Club** ou **Falar sobre o Clube no WhatsApp**.
+- Mantém a oferta mensal atual, sem alterações internas.
+- Apenas muda de posição: depois do novo bloco de conversão e antes do FAQ.
 
 ### 8. FAQ e footer — remoção final de dúvidas
 
@@ -92,3 +98,4 @@ O footer concentra endereço, horário de atendimento, links de contato e redes 
 - Alteração de agenda, pagamentos ou integração com AppBarber.
 - Criação de avaliações fictícias.
 - Alteração da identidade visual sem uma solicitação específica.
+- Qualquer edição nas seções existentes além de reordená-las.
