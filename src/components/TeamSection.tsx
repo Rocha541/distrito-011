@@ -34,7 +34,7 @@ export default function TeamSection() {
 
     const media = gsap.matchMedia()
 
-    media.add('(min-width: 901px) and (prefers-reduced-motion: no-preference)', () => {
+    media.add('(min-width: 1101px) and (prefers-reduced-motion: no-preference)', () => {
       gsap.timeline({
         scrollTrigger: {
           trigger: section,
@@ -63,11 +63,13 @@ export default function TeamSection() {
 
       <div className="team-section__profiles">
         {professionals.map((professional) => (
-          <article className="team-section__profile" key={professional.name}>
-            <img src={professional.image} alt={professional.name} />
-            <h3>{professional.name}</h3>
-            <p><strong>{professional.role}</strong> {professional.description}</p>
-          </article>
+          <div className="team-section__profile-stage" key={professional.name}>
+            <article className="team-section__profile">
+              <img src={professional.image} alt={professional.name} />
+              <h3>{professional.name}</h3>
+              <p><strong>{professional.role}</strong> {professional.description}</p>
+            </article>
+          </div>
         ))}
       </div>
     </section>
