@@ -1,0 +1,61 @@
+.bio-page { min-height: 100svh; padding: 48px 32px; background: #f7f8f6; color: var(--green); display: grid; place-items: center; }
+.bio-layout { width: min(1100px, 100%); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 7vw, 104px); align-items: center; }
+.bio-photo { position: relative; align-self: stretch; min-height: 680px; overflow: hidden; border-radius: 20px; background: var(--deep-green); }
+.bio-photo::after { content: ''; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, rgba(1, 28, 20, .88)); pointer-events: none; }
+.bio-photo > img { height: 100%; width: 100%; position: absolute; inset: 0; object-fit: cover; object-position: 58% center; }
+.bio-photo__caption { position: absolute; z-index: 1; bottom: 32px; left: 32px; right: 32px; display: flex; align-items: end; justify-content: space-between; gap: 12px; color: #fff; }
+.bio-photo__caption > span:first-child { max-width: 120px; font-size: 11px; font-weight: 600; line-height: 1.7; letter-spacing: 2px; }
+.bio-photo__caption > span:last-child { font-size: 72px; font-weight: 900; line-height: .8; letter-spacing: -5px; }
+.bio-content { padding: 12px 0; }
+.bio-brand { margin: 0 0 38px; font-size: 24px; font-weight: 900; line-height: 1.064; letter-spacing: -.72px; }
+.bio-heading h1 { margin: 0; font-size: clamp(46px, 4.8vw, 64px); font-weight: 900; line-height: 1.064; letter-spacing: -.04em; }
+.bio-description { margin: 20px 0 32px; color: #626b66; font-size: 16px; line-height: 1.5; }
+.bio-links { display: grid; gap: 12px; }
+.bio-link { display: flex; align-items: center; gap: 16px; min-height: 84px; padding: 18px 20px; border: 1px solid #dfe3df; border-radius: 16px; background: #fff; transition: background-color .24s ease, border-color .24s ease, box-shadow .24s ease; }
+.bio-link__icon { display: flex; flex: 0 0 24px; }
+.bio-link__icon svg { width: 24px; height: 24px; stroke-width: 1.7; }
+.bio-link__copy { display: grid; gap: 4px; min-width: 0; }
+.bio-link__copy strong { font-size: 17px; font-weight: 700; line-height: 1.2; letter-spacing: -.3px; }
+.bio-link__copy > span { color: #626b66; font-size: 13px; line-height: 1.35; }
+.bio-link__arrow { margin-left: auto; flex: 0 0 20px; width: 20px; height: 20px; stroke-width: 1.7; transition: transform .24s ease; }
+.bio-link--primary { color: #fff; background: var(--green); border-color: var(--green); }
+.bio-link--primary .bio-link__copy > span { color: #d5dfda; }
+.bio-link:focus-visible { outline: 3px solid #b08030; outline-offset: 4px; }
+.bio-footer { margin-top: 32px; color: #626b66; }
+.bio-footer p { display: flex; gap: 6px; align-items: center; margin: 0 0 4px; font-size: 13px; font-weight: 600; }
+.bio-footer svg { width: 14px; height: 14px; }
+.bio-footer address { margin-left: 20px; font-size: 12px; font-style: normal; }
+.bio-footer__signature { display: block; margin-top: 24px; color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 2.5px; }
+@media (hover: hover) {
+  .bio-link:hover { border-color: #9dac9f; background: #eef2ed; box-shadow: 0 6px 18px #011c1408; }
+  .bio-link--primary:hover { border-color: #0d3426; background: #0d3426; }
+  .bio-link:hover .bio-link__arrow { transform: translate(2px, -2px); }
+}
+@media (max-width: 760px) {
+  .bio-page { padding: 0 0 28px; display: block; }
+  .bio-layout { display: block; max-width: 480px; margin: 0 auto; }
+  .bio-photo { min-height: 0; height: 200px; border-radius: 0 0 20px 20px; }
+  .bio-photo > img { object-position: center 46%; }
+  .bio-photo__caption { left: 24px; right: 24px; bottom: 22px; }
+  .bio-photo__caption > span:first-child { max-width: none; font-size: 9px; letter-spacing: 1.6px; }
+  .bio-photo__caption > span:last-child { font-size: 44px; letter-spacing: -3px; }
+  .bio-content { padding: 28px 24px 0; }
+  .bio-heading { text-align: center; }
+  .bio-brand { margin-bottom: 18px; font-size: 22px; }
+  .bio-heading h1 { font-size: 44px; }
+  .bio-description { margin: 14px 0 26px; font-size: 14px; }
+  .bio-link { min-height: 78px; padding: 16px; gap: 14px; }
+  .bio-link__copy strong { font-size: 16px; }
+  .bio-link__copy > span { font-size: 12px; }
+  .bio-footer { margin-top: 26px; text-align: center; }
+  .bio-footer p { justify-content: center; }
+  .bio-footer address { margin-left: 0; }
+  .bio-footer__signature { margin-top: 20px; }
+}
+@media (max-width: 360px) {
+  .bio-content { padding-inline: 16px; }
+  .bio-link { gap: 10px; padding-inline: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bio-link, .bio-link__arrow { transition: none; }
+}
