@@ -15,6 +15,7 @@ import styleRight from './assets/figma/style-right.png'
 import BookingCtaSection from './components/BookingCtaSection'
 import SiteFooter from './components/SiteFooter'
 import StyleSection from './components/StyleSection'
+import TeamSection from './components/TeamSection'
 import { siteConfig } from './config/site'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
@@ -133,6 +134,8 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        <TeamSection />
 
         <section className="services-section" id="servicos">
           <div className="services-heading">

@@ -16,6 +16,7 @@ it('mantém as seções existentes na nova ordem sem perder seus CTAs', () => {
     'Seu estilo.Seu distrito.',
     'Estilo pensado para você',
     'Seu momento começa antes do corte.',
+    'Seu estilo nas mãos de quem entende',
     'Tudo que seu estilo precisa',
     'Pronto para mudar o visual?',
     'Seu estilo sempre em dia.',

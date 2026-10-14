@@ -77,6 +77,19 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
 .experience-copy p { max-width: 616px; margin: 21px auto 52px; color: #484848; font-size: 16px; line-height: 1.064; letter-spacing: -.48px; }
 .experience-copy strong { color: var(--green); }
 
+.team-section { display: grid; grid-template-columns: minmax(360px, .84fr) minmax(0, 706px); gap: clamp(64px, 12vw, 238px); max-width: 1440px; margin: 0 auto; padding: 104px max(24px, calc((100vw - 1238px) / 2)) 144px; color: var(--deep-green); }
+.team-section__intro { align-self: start; padding-top: 72px; }
+.team-section__intro h2 { max-width: 472px; margin: 0; color: var(--green); font-size: clamp(48px, 4.45vw, 64px); font-weight: 900; line-height: 1.064; letter-spacing: -2.56px; }
+.team-section__intro > p { max-width: 536px; margin: 24px 0 42px; color: #484848; font-size: 16px; line-height: 1.35; letter-spacing: -.32px; }
+.team-section__cta-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.team-section__profiles { display: grid; gap: 84px; }
+.team-section__profile { min-width: 0; }
+.team-section__profile img { width: 100%; aspect-ratio: 706 / 588; object-fit: cover; object-position: center 38%; border-radius: 16px; }
+.team-section__profile:nth-child(2) img { object-position: center 30%; }
+.team-section__profile h3 { margin: 24px 0 12px; color: var(--green); font-size: 36px; font-weight: 900; line-height: 1.064; letter-spacing: -1.44px; }
+.team-section__profile p { max-width: 642px; margin: 0; color: #484848; font-size: 16px; line-height: 1.35; letter-spacing: -.32px; }
+.team-section__profile strong { color: var(--green); }
+
 .services-section { padding: 112px max(24px, calc((100vw - 1428px) / 2)) 132px; background: var(--green); color: #fff; }
 .services-heading { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .services-heading h2 { margin: 0; font-size: 64px; font-weight: 900; line-height: 1.064; letter-spacing: -2.56px; }
@@ -190,6 +203,9 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
   .experience-gallery { min-height: 700px; max-width: 760px; width: 100%; margin: 0 auto; }
   .experience-copy { padding: 40px 20px; }
   .experience-copy h2 { font-size: clamp(44px, 8vw, 64px); }
+  .team-section { grid-template-columns: minmax(280px, .8fr) minmax(0, 1fr); gap: 56px; padding-top: 88px; padding-bottom: 104px; }
+  .team-section__intro { padding-top: 36px; }
+  .team-section__profile h3 { font-size: 32px; }
   .services-section { padding-top: 86px; }
   .booking-cta-section { padding-top: 96px; padding-bottom: 96px; }
   .site-footer__content { justify-content: center; }
@@ -217,6 +233,12 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
   .experience-gallery img:nth-child(2) { align-self: flex-end; }
   .experience-copy { padding-inline: 0; }
   .experience-copy p { line-height: 1.35; }
+  .team-section { grid-template-columns: 1fr; gap: 54px; padding: 76px 24px 88px; }
+  .team-section__intro { padding-top: 0; }
+  .team-section__intro h2 { max-width: 500px; font-size: 44px; }
+  .team-section__intro > p { margin: 18px 0 30px; }
+  .team-section__profiles { gap: 52px; }
+  .team-section__profile h3 { margin-top: 18px; font-size: 30px; }
   .services-heading h2 { font-size: 44px; }
   .services-heading p { max-width: 310px; line-height: 1.35; }
   .services-grid { margin-top: 54px; grid-template-columns: 1fr; }
