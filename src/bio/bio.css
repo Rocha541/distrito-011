@@ -1,4 +1,4 @@
-.bio-page { min-height: 100svh; padding: clamp(30px, 7vw, 72px) 20px 36px; background: radial-gradient(circle at 50% -20%, #e7efea 0, #f7f8f6 42%, #f7f8f6 100%); color: var(--green); }
+.bio-page { min-height: 100svh; padding: clamp(30px, 7vw, 72px) 20px 36px; background: #fff; color: var(--green); }
 .bio-content { width: min(100%, 560px); margin: 0 auto; }
 .bio-heading { text-align: center; }
 .bio-brand { margin: 0 0 14px; font-size: 21px; font-weight: 900; line-height: 1.064; letter-spacing: -.72px; }
