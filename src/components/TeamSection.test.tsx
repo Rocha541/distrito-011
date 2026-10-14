@@ -13,4 +13,5 @@ it('apresenta os profissionais e CTAs de contato da equipe', () => {
   expect(screen.getByRole('link', { name: 'Chamar no WhatsApp' })).toHaveAttribute('href', 'https://wa.me/5511940111517')
   expect(screen.getByRole('link', { name: 'Agende seu corte' })).toHaveAttribute('href', 'https://appbarber.com.br/')
   expect(document.querySelectorAll('.team-section__profile-stage')).toHaveLength(2)
+  expect(document.querySelector('.team-section__intro-stage')).toBeInTheDocument()
 })
