@@ -1,10 +1,11 @@
-import { ArrowUpRight, CalendarDays, Camera, Globe, MapPin, MessageCircle } from 'lucide-react'
+import { ArrowUpRight, CalendarDays, Globe, MapPin } from 'lucide-react'
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa6'
 import { siteConfig } from '../config/site'
 
 const links = [
   { label: 'Agende seu corte', detail: 'Escolha seu horário no AppBarber', href: siteConfig.bookingUrl, icon: CalendarDays, primary: true },
-  { label: 'WhatsApp', detail: 'Fale com a gente', href: siteConfig.whatsappUrl, icon: MessageCircle, primary: false },
-  { label: 'Instagram', detail: 'Cortes, referências e nosso dia a dia', href: siteConfig.instagramUrl, icon: Camera, primary: false },
+  { label: 'WhatsApp', detail: 'Fale com a gente', href: siteConfig.whatsappUrl, icon: FaWhatsapp, primary: false },
+  { label: 'Instagram', detail: 'Cortes, referências e nosso dia a dia', href: siteConfig.instagramUrl, icon: FaInstagram, primary: false },
   { label: 'Conheça nosso site', detail: 'Seu próximo estilo começa aqui', href: siteConfig.siteUrl, icon: Globe, primary: false },
 ] as const
 
