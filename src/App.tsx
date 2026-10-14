@@ -166,7 +166,6 @@ export default function App() {
 
         <section className="membership-section" id="plano">
           <div className="membership-heading">
-            <span>Plano recorrente</span>
             <h2>Seu estilo sempre em dia.</h2>
             <p>Uma rotina simples para quem não quer esperar o visual perder o corte.</p>
           </div>

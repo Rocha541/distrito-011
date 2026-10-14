@@ -42,3 +42,9 @@ it('expõe no footer os dados comerciais confirmados', () => {
   expect(screen.getByText('Das 9h às 19h')).toBeInTheDocument()
   expect(screen.getByText('Dinheiro, Pix e cartão')).toBeInTheDocument()
 })
+
+it('não exibe o selo de plano recorrente na seção de plano', () => {
+  render(<App />)
+
+  expect(screen.queryByText('Plano recorrente')).not.toBeInTheDocument()
+})
