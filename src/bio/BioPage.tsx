@@ -13,7 +13,6 @@ export default function BioPage() {
     <main className="bio-page">
       <div className="bio-content">
         <header className="bio-heading">
-          <div className="bio-mark" aria-hidden="true">011</div>
           <p className="bio-brand">DISTRITO 011</p>
           <h1>Seu estilo.<br />Seu distrito.</h1>
           <p className="bio-description">Corte, barba e cuidado nos detalhes.</p>

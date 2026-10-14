@@ -1,7 +1,6 @@
 .bio-page { min-height: 100svh; padding: clamp(30px, 7vw, 72px) 20px 36px; background: radial-gradient(circle at 50% -20%, #e7efea 0, #f7f8f6 42%, #f7f8f6 100%); color: var(--green); }
 .bio-content { width: min(100%, 560px); margin: 0 auto; }
 .bio-heading { text-align: center; }
-.bio-mark { width: 64px; height: 64px; display: grid; place-items: center; margin: 0 auto 20px; border: 1px solid #184634; border-radius: 50%; background: var(--green); color: #fff; font-size: 21px; font-weight: 900; letter-spacing: -1.5px; box-shadow: 0 8px 22px #011c1420; }
 .bio-brand { margin: 0 0 14px; font-size: 21px; font-weight: 900; line-height: 1.064; letter-spacing: -.72px; }
 .bio-heading h1 { margin: 0; font-size: clamp(38px, 10vw, 54px); font-weight: 900; line-height: 1.03; letter-spacing: -.045em; }
 .bio-description { margin: 16px 0 30px; color: #626b66; font-size: 15px; line-height: 1.45; }
@@ -24,13 +23,12 @@
 .bio-footer address { font-size: 12px; font-style: normal; }
 .bio-footer__signature { display: block; margin-top: 22px; color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 2.5px; }
 @media (hover: hover) {
-  .bio-link:hover { border-color: #a6b7aa; background: #f1f5f1; box-shadow: 0 8px 20px #011c1410; transform: translateY(-2px); }
-  .bio-link--primary:hover { border-color: #0d3426; background: #0d3426; box-shadow: 0 8px 0 #011c14; }
+  .bio-link:hover { border-color: #a6b7aa; background: #f1f5f1; box-shadow: 0 2px 0 #011c1408; }
+  .bio-link--primary:hover { border-color: #0d3426; background: #0d3426; box-shadow: 0 7px 0 #0d3426; }
 }
 @media (min-width: 700px) {
   .bio-page { display: grid; place-items: center; }
   .bio-content { padding: 12px 0; }
-  .bio-mark { width: 70px; height: 70px; font-size: 23px; }
   .bio-link { min-height: 82px; padding-inline: 20px; }
 }
 @media (prefers-reduced-motion: reduce) { .bio-link { transition: none; } }
