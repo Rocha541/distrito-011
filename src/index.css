@@ -85,7 +85,7 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
 .team-section__cta-row { display: flex; flex-wrap: nowrap; gap: 8px; }
 .team-section__profiles { min-width: 0; }
 .team-section__profile-stage { display: flex; min-height: 100vh; align-items: center; }
-.team-section__profile { width: min(100%, 706px); margin-left: auto; }
+.team-section__profile { width: min(100%, 706px); margin-inline: auto; }
 .team-section__profile img { width: 100%; aspect-ratio: 706 / 588; object-fit: cover; object-position: center 38%; border-radius: 16px; }
 .team-section__profile:nth-child(2) img { object-position: center 30%; }
 .team-section__profile h3 { margin: 24px 0 12px; color: var(--green); font-size: 36px; font-weight: 900; line-height: 1.064; letter-spacing: -1.44px; }
