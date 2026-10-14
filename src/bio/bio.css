@@ -21,7 +21,6 @@
 .bio-footer p { display: flex; justify-content: center; align-items: center; gap: 6px; margin: 0 0 4px; font-size: 13px; font-weight: 600; }
 .bio-footer svg { width: 14px; height: 14px; }
 .bio-footer address { font-size: 12px; font-style: normal; }
-.bio-footer__signature { display: block; margin-top: 22px; color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 2.5px; }
 @media (hover: hover) {
   .bio-link:hover { border-color: #a6b7aa; background: #f1f5f1; box-shadow: 0 2px 0 #011c1408; }
   .bio-link--primary:hover { border-color: #0d3426; background: #0d3426; box-shadow: 0 7px 0 #0d3426; }

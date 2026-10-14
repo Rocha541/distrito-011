@@ -1,4 +1,4 @@
-import { ArrowUpRight, CalendarDays, Globe, MapPin } from 'lucide-react'
+import { ArrowUpRight, CalendarDays, Link2, MapPin } from 'lucide-react'
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa6'
 import { siteConfig } from '../config/site'
 
@@ -6,7 +6,7 @@ const links = [
   { label: 'Agende seu corte', detail: 'Escolha seu horário no AppBarber', href: siteConfig.bookingUrl, icon: CalendarDays, primary: true },
   { label: 'WhatsApp', detail: 'Fale com a gente', href: siteConfig.whatsappUrl, icon: FaWhatsapp, primary: false },
   { label: 'Instagram', detail: 'Cortes, referências e nosso dia a dia', href: siteConfig.instagramUrl, icon: FaInstagram, primary: false },
-  { label: 'Conheça nosso site', detail: 'Seu próximo estilo começa aqui', href: siteConfig.siteUrl, icon: Globe, primary: false },
+  { label: 'Conheça nosso site', detail: 'Seu próximo estilo começa aqui', href: siteConfig.siteUrl, icon: Link2, primary: false },
 ] as const
 
 export default function BioPage() {
@@ -33,7 +33,6 @@ export default function BioPage() {
         <footer className="bio-footer">
             <p><MapPin aria-hidden="true" />Embu das Artes, SP</p>
             <address>Av. Aimara, 527</address>
-            <span className="bio-footer__signature">ESTILO É IDENTIDADE.</span>
         </footer>
       </div>
     </main>
