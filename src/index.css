@@ -146,20 +146,22 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
 
 .site-footer { overflow: hidden; }
 .site-footer__cta { padding: clamp(56px, 8vw, 120px) 24px; background: rgb(18, 46, 34); color: #fff; }
-.site-footer__cta-content, .site-footer__content { width: min(1428px, 100%); margin: 0 auto; }
+.site-footer__cta-content { width: min(1428px, 100%); margin: 0 auto; }
 .site-footer__cta-content { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: end; }
 .site-footer__cta h2 { max-width: 930px; margin: 0; font-size: clamp(48px, 5.4vw, 84px); font-weight: 400; line-height: .98; letter-spacing: -3.36px; }
 .site-footer__cta h2 strong { font-weight: 900; }
 .site-footer__cta-links { display: flex; gap: 8px; padding-bottom: 8px; }
 .site-footer__cta-links .cta { text-decoration: none; }
 .site-footer__details { min-height: 440px; padding: 56px 24px 0; background: #f7f8f6; color: var(--deep-green); }
-.site-footer__content { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; }
-.site-footer__meta { display: grid; grid-template-columns: repeat(3, minmax(150px, 1fr)); gap: 16px 52px; }
+.site-footer__content { display: flex; width: min(1310px, 100%); margin: 0 auto; align-items: flex-start; justify-content: space-between; gap: 40px; }
+.site-footer__meta { display: grid; grid-template-columns: auto auto; gap: 16px 52px; }
 .site-footer address, .site-footer__meta p { margin: 0; color: #456155; font-size: 15px; line-height: 1.4; font-style: normal; }
+.site-footer__copyright { grid-column: 1 / -1; }
 .site-footer__links { display: flex; gap: 16px; }
 .site-footer__links a { display: inline-flex; align-items: center; justify-content: center; color: var(--deep-green); }
-.site-footer__links svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 2.2; }
-.site-footer__brand { width: min(1428px, 100%); margin: clamp(60px, 7vw, 112px) auto -0.11em; color: var(--deep-green); font-size: clamp(88px, 17.1vw, 246px); font-weight: 900; line-height: .8; letter-spacing: -.09em; white-space: nowrap; }
+.site-footer__links svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.site-footer__brand-wrap { height: clamp(94px, 11.5vw, 166px); margin-top: clamp(60px, 7vw, 112px); overflow: hidden; }
+.site-footer__brand { width: min(1428px, 100%); margin: 0 auto; color: var(--deep-green); font-size: clamp(88px, 17.1vw, 246px); font-weight: 900; line-height: .8; letter-spacing: -.09em; white-space: nowrap; transform: translateY(12%); }
 .site-footer__cta-links a:focus-visible { outline: 3px solid #fff; outline-offset: 6px; }
 .site-footer__links a:focus-visible { outline: 3px solid var(--deep-green); outline-offset: 6px; }
 
@@ -274,7 +276,8 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
   .site-footer__details { min-height: 390px; padding: 42px 24px 0; }
   .site-footer__content, .site-footer__meta { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
   .site-footer__links { margin-top: 22px; }
-  .site-footer__brand { margin-top: 90px; font-size: clamp(66px, 18vw, 104px); }
+  .site-footer__brand-wrap { height: 68px; margin-top: 72px; }
+  .site-footer__brand { font-size: clamp(66px, 18vw, 104px); }
   .membership-section { padding-top: 86px; padding-bottom: 96px; }
   .membership-heading h2 { font-size: 44px; }
   .membership-heading p { line-height: 1.35; }
