@@ -5,7 +5,7 @@ import App from './App'
 it('expõe CTAs para WhatsApp e agendamento', () => {
   render(<App />)
   expect(screen.getAllByRole('link', { name: /whatsapp/i })[0]).toHaveAttribute('href', 'https://wa.me/5511940111517')
-  expect(screen.getAllByRole('link', { name: /agende/i })[0]).toHaveAttribute('href', 'https://appbarber.com.br/')
+  expect(screen.getAllByRole('link', { name: /agende/i })[0]).toHaveAttribute('href', 'https://sites.appbarber.com.br/distrito011barbershop-h8o?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeFdw9doF7onWqSC5t9Wckc6WaXCYTKuQQT-m748lw_tzYgStDDcbw5Gsj8Tw_aem_PU5BVLAmomHrJFuGxHwJlQ')
 })
 
 it('mantém as seções existentes na nova ordem sem perder seus CTAs', () => {
@@ -25,14 +25,14 @@ it('mantém as seções existentes na nova ordem sem perder seus CTAs', () => {
   expect(positions.every((position) => position >= 0)).toBe(true)
   expect(positions).toEqual([...positions].sort((a, b) => a - b))
   expect(screen.getAllByRole('link', { name: 'Chamar no WhatsApp' })[0]).toHaveAttribute('href', 'https://wa.me/5511940111517')
-  expect(screen.getAllByRole('link', { name: 'Agende seu corte' })[0]).toHaveAttribute('href', 'https://appbarber.com.br/')
+  expect(screen.getAllByRole('link', { name: 'Agende seu corte' })[0]).toHaveAttribute('href', 'https://sites.appbarber.com.br/distrito011barbershop-h8o?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeFdw9doF7onWqSC5t9Wckc6WaXCYTKuQQT-m748lw_tzYgStDDcbw5Gsj8Tw_aem_PU5BVLAmomHrJFuGxHwJlQ')
 })
 
 it('oferece um CTA exclusivo para agendar no ponto de conversão', () => {
   render(<App />)
 
   expect(screen.getByRole('heading', { name: 'Pronto para mudar o visual?' })).toBeInTheDocument()
-  expect(screen.getByRole('link', { name: 'Agendar meu horário' })).toHaveAttribute('href', 'https://appbarber.com.br/')
+  expect(screen.getByRole('link', { name: 'Agendar meu horário' })).toHaveAttribute('href', 'https://sites.appbarber.com.br/distrito011barbershop-h8o?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeFdw9doF7onWqSC5t9Wckc6WaXCYTKuQQT-m748lw_tzYgStDDcbw5Gsj8Tw_aem_PU5BVLAmomHrJFuGxHwJlQ')
 })
 
 it('expõe no footer os dados comerciais confirmados', () => {
