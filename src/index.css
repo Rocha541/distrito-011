@@ -263,7 +263,7 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
   .style-card__overlay { padding: 0 12px 72px; }
   .style-card__overlay strong { font-size: 28px; letter-spacing: -1px; }
   .style-card__overlay span { display: none; }
-  .experience-gallery { min-height: auto; display: flex; flex-direction: column; gap: 24px; }
+  .experience-gallery { min-height: auto; display: flex; flex-direction: column; gap: 8px; }
   .experience-gallery img { position: static; width: min(78vw, 320px); height: auto; aspect-ratio: 313 / 466; }
   .experience-gallery img:nth-child(1), .experience-gallery img:nth-child(3) { align-self: flex-start; }
   .experience-gallery img:nth-child(2) { align-self: flex-end; }
