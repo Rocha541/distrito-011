@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: process.env.GITHUB_ACTIONS ? '/distrito-011/' : '/',
   plugins: [react(), tailwindcss()],
   build: {
     rollupOptions: {

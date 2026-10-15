@@ -16,7 +16,7 @@ const professionals = [
     image: guilhermeRibeiro,
   },
   {
-    name: 'Matheus Costa',
+    name: 'Pablo Santos',
     role: 'Especialista em cortes modernos, fades e acabamento de precisão',
     description: 'Combina técnica e atenção aos detalhes para criar visuais marcantes e bem estruturados. Seu foco está em entender o estilo de cada cliente e entregar um corte atual, versátil e fácil de manter no dia a dia.',
     image: matheusCosta,
