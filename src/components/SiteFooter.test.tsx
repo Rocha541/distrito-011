@@ -18,6 +18,8 @@ it('mostra os dados comerciais fornecidos', () => {
   expect(screen.getByText('Av. Aimara, 527 | Embu das Artes')).toBeInTheDocument()
   expect(screen.getByText('Das 9h às 19h')).toBeInTheDocument()
   expect(screen.getByText('Dinheiro, Pix e cartão')).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: 'Seu próximo corte começa aqui.' })).toBeInTheDocument()
+  expect(screen.getByRole('link', { name: 'Agende seu corte' })).toHaveAttribute('href', 'https://appbarber.com.br/')
   expect(screen.getByRole('link', { name: 'Falar no WhatsApp' })).toHaveAttribute('href', 'https://wa.me/5511940111517')
   expect(screen.getByRole('link', { name: 'Instagram' })).toHaveAttribute('href', 'https://www.instagram.com/barbeariadistrito011/')
 })
