@@ -54,7 +54,11 @@ export default function TeamSection() {
     <section ref={sectionRef} className="team-section" aria-labelledby="team-title">
       <div ref={introRef} className="team-section__intro-stage">
         <div className="team-section__intro">
-          <h2 id="team-title">Seu estilo nas mãos de quem entende</h2>
+          <h2 id="team-title" aria-label="Seu estilo nas mãos de quem entende">
+            <span>Seu estilo nas </span>
+            <span>mãos de </span>
+            <span>quem entende</span>
+          </h2>
           <p>Cada corte começa com técnica, atenção e personalidade. Nosso time combina experiência e olhar apurado para criar um resultado que respeita seu estilo e valoriza quem você é.</p>
           <div className="team-section__cta-row">
             <a className="cta cta--gray" href={siteConfig.whatsappUrl} target="_blank" rel="noreferrer">Chamar no WhatsApp</a>
