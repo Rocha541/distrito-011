@@ -44,7 +44,6 @@ const services = [
 const footerDetails = {
   address: 'Av. Aimara, 527 | Embu das Artes',
   hours: 'Das 9h às 19h',
-  paymentMethods: 'Dinheiro, Pix e cartão',
   whatsappUrl: siteConfig.whatsappUrl,
   instagramUrl: 'https://www.instagram.com/barbeariadistrito011/',
 } as const

@@ -40,7 +40,7 @@ it('expõe no footer os dados comerciais confirmados', () => {
 
   expect(screen.getByText('Av. Aimara, 527 | Embu das Artes')).toBeInTheDocument()
   expect(screen.getByText('Das 9h às 19h')).toBeInTheDocument()
-  expect(screen.getByText('Dinheiro, Pix e cartão')).toBeInTheDocument()
+  expect(screen.queryByText('Dinheiro, Pix e cartão')).not.toBeInTheDocument()
 })
 
 it('não exibe o selo de plano recorrente na seção de plano', () => {
