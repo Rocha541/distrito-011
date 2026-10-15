@@ -39,7 +39,7 @@ export default function TeamSection() {
         scrollTrigger: {
           trigger: section,
           start: 'top top+=72',
-          end: 'bottom bottom-=72',
+          end: 'bottom bottom',
           pin: intro,
           pinSpacing: false,
           invalidateOnRefresh: true,

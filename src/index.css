@@ -177,7 +177,7 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
   .hero-trio .portrait--right { right: 30px; }
   .services-section { padding-top: 90px; padding-bottom: 104px; }
   .team-section { grid-template-columns: minmax(330px, 420px) minmax(0, 1fr); gap: clamp(48px, 6vw, 96px); }
-  .team-section__profile { width: min(100%, 520px); }
+  .team-section__profile { width: min(100%, 460px); }
   .team-section__profile-stage { min-height: 100vh; }
   .services-grid { margin-top: 48px; }
   .service-card { padding: 26px 22px; }
