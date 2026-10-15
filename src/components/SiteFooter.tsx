@@ -23,14 +23,22 @@ export default function SiteFooter({ details }: { details: FooterDetails }) {
       <div className="site-footer__details">
         <div className="site-footer__content">
           <div className="site-footer__meta">
-            <address>{details.address}</address>
-            <p>{details.hours}</p>
+            <div>
+              <strong>Endereço</strong>
+              <address>{details.address}</address>
+            </div>
+            <div>
+              <strong>Horários</strong>
+              <p>{details.hours}</p>
+            </div>
             <p className="site-footer__copyright">© 2026 Distrito 011</p>
           </div>
           <nav className="site-footer__links" aria-label="Redes sociais">
             <a href={details.whatsappUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp">
               <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.5 5.9L.1 24l6.3-1.6a11.8 11.8 0 0 0 5.7 1.5h.1c6.5 0 11.8-5.3 11.8-11.9 0-3.2-1.2-6.1-3.5-8.5ZM12.1 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 1 1 8.3 4.6Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1s-.5-.1-.7.2-.8 1-.9 1.1-.3.2-.6.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.4.1-.6l.5-.5c.1-.2.2-.3.3-.5s0-.4 0-.5L9 6.9c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.7.4s-1 1-1 2.5 1 2.8.2 3.1c.2.2 2.6 4 6.2 5.6.9.4 1.6.7 2.2.9.9.3 1.7.2 2.3.1.7-.1 1.8-.8 2.1-1.5s.3-1.4.2-1.5-.3-.2-.6-.4Z" />
+                <circle cx="12" cy="12" r="9" />
+                <path d="M8.4 8.1c.2-.5.6-.6 1-.4l1 .5c.3.1.4.4.3.7l-.4 1c-.1.2 0 .4.1.6.5.9 1.3 1.7 2.2 2.2.2.1.4.2.6.1l1-.4c.3-.1.6 0 .7.3l.5 1c.2.4 0 .8-.4 1-.7.3-1.4.4-2.1.1-1.4-.6-2.7-1.6-3.7-2.7-1-1-2-2.3-2.6-3.7-.3-.7-.2-1.4.1-2.1l.5-.7Z" />
+                <path d="m7.1 17.3-1.3 1.4 2-.5" />
               </svg>
             </a>
             <a href={details.instagramUrl} target="_blank" rel="noreferrer" aria-label="Instagram">

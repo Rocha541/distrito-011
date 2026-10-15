@@ -186,9 +186,9 @@ export default function App() {
                 <div><strong>50% de desconto após 15 dias</strong><p>Retorne para a manutenção do corte dentro do período e pague apenas metade do valor.</p></div>
               </div>
               <div className="membership-benefits">
-                <div><span className="membership-benefit-icon"><CalendarCheck aria-hidden="true" /></span><strong>Agenda prioritária</strong><p>Mais facilidade para manter seus horários organizados.</p></div>
-                <div><span className="membership-benefit-icon"><BellRing aria-hidden="true" /></span><strong>Lembrete de retorno</strong><p>Avisamos quando estiver chegando a hora da manutenção.</p></div>
-                <div><span className="membership-benefit-icon"><Sparkles aria-hidden="true" /></span><strong>Visual consistente</strong><p>Seu corte permanece alinhado durante todo o mês.</p></div>
+                <div><span className="membership-benefit-icon"><CalendarCheck aria-hidden="true" /></span><div className="membership-benefit-copy"><strong>Agenda prioritária</strong><p>Mais facilidade para manter seus horários organizados.</p></div></div>
+                <div><span className="membership-benefit-icon"><BellRing aria-hidden="true" /></span><div className="membership-benefit-copy"><strong>Lembrete de retorno</strong><p>Avisamos quando estiver chegando a hora da manutenção.</p></div></div>
+                <div><span className="membership-benefit-icon"><Sparkles aria-hidden="true" /></span><div className="membership-benefit-copy"><strong>Visual consistente</strong><p>Seu corte permanece alinhado durante todo o mês.</p></div></div>
               </div>
             </div>
           </div>
