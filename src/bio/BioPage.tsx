@@ -1,0 +1,40 @@
+import { ArrowUpRight, CalendarDays, Link2, MapPin } from 'lucide-react'
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa6'
+import { siteConfig } from '../config/site'
+
+const links = [
+  { label: 'Agende seu corte', detail: 'Escolha seu horário no AppBarber', href: siteConfig.bookingUrl, icon: CalendarDays, primary: true },
+  { label: 'WhatsApp', detail: 'Fale com a gente', href: siteConfig.whatsappUrl, icon: FaWhatsapp, primary: false },
+  { label: 'Instagram', detail: 'Cortes, referências e nosso dia a dia', href: siteConfig.instagramUrl, icon: FaInstagram, primary: false },
+  { label: 'Conheça nosso site', detail: 'Seu próximo estilo começa aqui', href: siteConfig.siteUrl, icon: Link2, primary: false },
+] as const
+
+export default function BioPage() {
+  return (
+    <main className="bio-page">
+      <div className="bio-content">
+        <header className="bio-heading">
+          <p className="bio-brand">DISTRITO 011</p>
+          <h1>Seu estilo.<br />Seu distrito.</h1>
+          <p className="bio-description">Corte, barba e cuidado nos detalhes.</p>
+        </header>
+
+        <nav className="bio-links" aria-label="Links da Distrito 011">
+            {links.map(({ label, detail, href, icon: Icon, primary }) => (
+              <a className={`bio-link${primary ? ' bio-link--primary' : ''}`} href={href} key={label}
+                {...(href.startsWith('https://') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+                <span className="bio-link__icon"><Icon aria-hidden="true" /></span>
+                <span className="bio-link__copy"><strong>{label}</strong><span>{detail}</span></span>
+                <ArrowUpRight className="bio-link__arrow" aria-hidden="true" />
+              </a>
+            ))}
+        </nav>
+
+        <footer className="bio-footer">
+            <p><MapPin aria-hidden="true" />Embu das Artes, SP</p>
+            <address>Av. Aimara, 527</address>
+        </footer>
+      </div>
+    </main>
+  )
+}
