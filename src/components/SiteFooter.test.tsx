@@ -22,4 +22,7 @@ it('mostra os dados comerciais fornecidos', () => {
   expect(screen.getByRole('link', { name: 'Agende seu corte' })).toHaveAttribute('href', 'https://appbarber.com.br/')
   expect(screen.getByRole('link', { name: 'Falar no WhatsApp' })).toHaveAttribute('href', 'https://wa.me/5511940111517')
   expect(screen.getByRole('link', { name: 'Instagram' })).toHaveAttribute('href', 'https://www.instagram.com/barbeariadistrito011/')
+  expect(document.querySelector('.site-footer__cta')).toBeInTheDocument()
+  expect(document.querySelector('.site-footer__details')).toBeInTheDocument()
+  expect(document.querySelector('.site-footer__brand')).toHaveTextContent('DISTRITO 011')
 })

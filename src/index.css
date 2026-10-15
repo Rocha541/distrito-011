@@ -144,13 +144,21 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
 .membership-benefits strong { display: block; grid-column: 2; margin-top: 3px; font-size: 19px; line-height: 1.15; }
 .membership-benefits p { grid-column: 2; margin: 0; }
 
-.site-footer { padding: 72px 24px; background: var(--deep-green); color: #fff; }
-.site-footer__content { display: flex; width: min(1180px, 100%); margin: 0 auto; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-.site-footer__brand { margin: 0; font-size: 24px; font-weight: 900; letter-spacing: -.72px; }
-.site-footer address, .site-footer__content > p:not(.site-footer__brand) { margin: 0; color: #c6d3cd; font-size: 15px; font-style: normal; }
+.site-footer { overflow: hidden; }
+.site-footer__cta { padding: clamp(56px, 8vw, 120px) 24px; background: #a7d4bf; color: var(--deep-green); }
+.site-footer__cta-content, .site-footer__content { width: min(1428px, 100%); margin: 0 auto; }
+.site-footer__cta-content { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: end; }
+.site-footer__cta h2 { max-width: 930px; margin: 0; font-size: clamp(48px, 5.4vw, 84px); font-weight: 400; line-height: .98; letter-spacing: -3.36px; }
+.site-footer__cta h2 strong { font-weight: 900; }
+.site-footer__cta-links { display: flex; gap: 28px; padding-bottom: 8px; }
+.site-footer__cta-links a, .site-footer__links a { font-size: 16px; font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.site-footer__details { min-height: 500px; padding: 56px 24px 0; background: #f7f8f6; color: var(--deep-green); }
+.site-footer__content { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; }
+.site-footer__meta { display: grid; grid-template-columns: repeat(3, minmax(150px, 1fr)); gap: 16px 52px; }
+.site-footer address, .site-footer__meta p { margin: 0; color: #456155; font-size: 15px; line-height: 1.4; font-style: normal; }
 .site-footer__links { display: flex; gap: 18px; }
-.site-footer__links a { color: #fff; font-size: 15px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
-.site-footer__links a:focus-visible { outline: 3px solid #d8aa52; outline-offset: 4px; }
+.site-footer__brand { width: min(1428px, 100%); margin: clamp(100px, 14vw, 210px) auto -0.14em; color: var(--deep-green); font-size: clamp(88px, 17.1vw, 246px); font-weight: 900; line-height: .8; letter-spacing: -.09em; white-space: nowrap; }
+.site-footer__cta-links a:focus-visible, .site-footer__links a:focus-visible { outline: 3px solid var(--deep-green); outline-offset: 6px; }
 
 @media (min-width: 1501px) {
   .hero-trio { bottom: 50px; }
@@ -222,7 +230,9 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
   .team-section__profile h3 { margin-top: 18px; font-size: 30px; }
   .services-section { padding-top: 86px; }
   .booking-cta-section { padding-top: 96px; padding-bottom: 96px; }
-  .site-footer__content { justify-content: center; }
+  .site-footer__cta-content { grid-template-columns: 1fr; gap: 28px; }
+  .site-footer__cta-links { padding-bottom: 0; }
+  .site-footer__content { justify-content: space-between; }
 }
 
 @media (max-width: 700px) {
@@ -255,8 +265,13 @@ a:focus-visible { outline: 3px solid #d5a95f; outline-offset: 4px; }
   .service-photo { min-height: 230px; }
   .service-card h3 { font-size: 30px; }
   .booking-cta-section { padding-top: 78px; padding-bottom: 78px; }
-  .site-footer { padding-top: 56px; padding-bottom: 56px; }
-  .site-footer__content, .site-footer__links { flex-direction: column; align-items: center; text-align: center; }
+  .site-footer__cta { padding: 64px 24px; }
+  .site-footer__cta h2 { font-size: clamp(44px, 13vw, 64px); letter-spacing: -2px; }
+  .site-footer__cta-links { flex-wrap: wrap; gap: 16px 24px; }
+  .site-footer__details { min-height: 390px; padding: 42px 24px 0; }
+  .site-footer__content, .site-footer__meta { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .site-footer__links { margin-top: 22px; }
+  .site-footer__brand { margin-top: 90px; font-size: clamp(66px, 18vw, 104px); }
   .membership-section { padding-top: 86px; padding-bottom: 96px; }
   .membership-heading h2 { font-size: 44px; }
   .membership-heading p { line-height: 1.35; }
